@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie Edit</title>
+    <link rel="stylesheet" type="text/css" href="Style/style.css">
+ <!--Bootstrap CSS-->
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body onload="autoFill()">
+    <header>
+        <nav class="navbar navbar-dark bg-dark navbar-expand-sm">
+            <a class="navbar-brand justify-content-end" href="#" h1>
+              Movie-Cruiser
+              <img src="Images/logo.jpg" class="logo" alt="logo">
+            </a> 
+            <ul class="navbar-nav"> 
+                <li class="nav-item"> 
+                    <a class="nav-link  text-light" href="Home.html"> Home </a> 
+                </li> 
+                <li class="nav-item"> 
+                    <a class="nav-link  text-light" href="movie-list-admin.html"> Movies </a> 
+                </li> 
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+       <form action="edit-movie-status.html">
+           <h2 class="my-4 text-center">Edit Movie</h2>
+           <div class="row">
+                <div class="col-6 offset-1">
+                     <div class="form-group">
+                         <label for="title">Title</label>
+                         <input type="text" class="form-control" oninvalid="nameInvalid(this);" 
+                         oninput="nameInvalid(this);" id="title" name="title" placeholder="Enter the Title" pattern="^[a-zA-Z ]*$" minlength="2" maxlength="65" required>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col offset-1">
+                    <div class="form-group">
+                          <label for="boxOffice">Gross</label>
+                          <input type="text" class="form-control" id="gross" oninvalid="grossInvalid(this);"
+                           name="boxOffice" oninput="grossInvalid(this);" pattern="^{2}\.[0-9]{1,5}(?:\.[0-9]{2})$" value="$." required>
+                    </div>
+                 </div>
+                 <div class="col">
+                     <label for="active">Active</label>
+                        <div class="form-group">
+                             <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="active" id="active1" value="Yes" required>
+                                <label class="form-check-label" for="inlineRadio1">Yes</label>
+                             </div>
+                             <div class="form-check form-check-inline">
+                                 <input class="form-check-input" type="radio" name="active" id="active2" value="No" required>
+                                <label class="form-check-label" for="inlineRadio2">No</label>
+                             </div>
+                        </div>
+                    </div>
+                 <div class="col">
+                     <label for="dateOfLaunch">Date Of Launch</label>
+                     <input type="date" name="dateOfLaunch" id="dateOfLaunch" class="form-control" 
+                     oninvalid="dateInvalid(this);" oninput="dateInvalid(this);"  required>
+                 </div>
+                 <div class="col">
+                    <div class="form-group">
+                        <label for="genre">Genre</label>
+                        <select class="form-control" id="genre" required>
+                          <option value="select">Select</option>
+                          <option value="science fiction">Science Fiction</option>
+                          <option value="superHero">SuperHero</option>
+                          <option value="romance">Romance</option>
+                          <option value="comedy">Comedy</option>
+                          <option value="adventure">Adventure</option>
+                          <option value="thriller">Thriller</option>
+                        </select>
+                      </div>
+                 </div>
+            </div>
+            <div class="row">
+                     <div class="col-6 offset-1">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox"  id="hasTeaser">
+                            <label class="form-check-label" for="hasTeaser">Has Teaser</label>
+                          </div>
+                     </div>
+            </div>
+            <div class="row">
+                <div class="col-6 offset-1 mt-3">
+                    <a href="edit-movie-status.html"><button type="button" class="btn btn-success" oninvalid="update()" onclick="update()">Add/Update</button></a>
+                </div>
+            </div>
+       </form>
+    </div>
+
+    <footer class="foot bg-dark text-light">
+        <p class=" pl-4 pt-2"> Copyright &copy;2020</p> 
+    </footer>
+
+    <!--Bootstrap JavaScript-->
+    <script src="Js/script.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</body>
+</html>
